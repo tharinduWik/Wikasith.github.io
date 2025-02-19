@@ -3,35 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analyst Portfolio</title>
+    <title>Wikasith Dilshan | Data Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
-        h1 { color: #0077b6; }
-        .container { max-width: 800px; margin: auto; }
-        .project { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; }
-        a { text-decoration: none; color: #0077b6; font-weight: bold; }
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 8rem 0 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--bg-color);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .profile-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-timeline {
+            margin: 3rem 0;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .contact-section {
+            background: var(--card-bg);
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Your Name - Data Analyst</h1>
-        <p>Experienced in Power BI, Python, SQL, and Data Visualization</p>
-        <h2>Portfolio Projects</h2>
-        
-        <div class="project">
-            <h3>📊 Power BI Dashboard for Sales Analysis</h3>
-            <p>Analyzed sales data and created an interactive dashboard.</p>
-            <a href="https://github.com/your-username/sales-analysis" target="_blank">View Project</a>
+    <header>
+        <div class="container profile-intro">
+            <h1>Wikasith Dilshan</h1>
+            <p class="subtitle">Data Science Undergraduate | Data Analyst Intern</p>
+            <div class="skills-container">
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Power Apps</span>
+                <span class="skill-tag">Power Automate</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R Programming</span>
+                <span class="skill-tag">SharePoint</span>
+                <span class="skill-tag">AWS/Azure</span>
+                <span class="skill-tag">Excel</span>
+            </div>
         </div>
+    </header>
 
-        <div class="project">
-            <h3>📈 Machine Learning Model for Customer Segmentation</h3>
-            <p>Used clustering techniques to segment customers based on purchasing behavior.</p>
-            <a href="https://github.com/your-username/customer-segmentation" target="_blank">View Project</a>
+    <main class="container">
+        <section class="sections-grid">
+            <article class="section-card">
+                <i class="card-icon fas fa-graduation-cap"></i>
+                <h3>Education</h3>
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <h4>BSc (Hons) in Information Technology</h4>
+                        <p>Specialising in Data Science</p>
+                        <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>G.C.E. Advanced Level Examination</h4>
+                        <p>Physical Stream</p>
+                        <p>Shariputhra Secondary College, Matara</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section-card">
+                <i class="card-icon fas fa-laptop-code"></i>
+                <h3>Projects</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 1rem;">
+                        <h4>Music Recommendation System</h4>
+                        <p>Python, Anaconda (Jupiter Notebook)</p>
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <h4>AutoMobile Loan Prediction System</h4>
+                        <p>Python, Anaconda (Jupiter Notebook)</p>
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <h4>Tourism Management System</h4>
+                        <p>MERN Stack</p>
+                    </li>
+                    <li>
+                        <h4>Note Task Management Application</h4>
+                        <p>Android Studio, Kotlin, SQLite</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="section-card">
+                <i class="card-icon fas fa-briefcase"></i>
+                <h3>Experience</h3>
+                <h4>Data Analyst Intern</h4>
+                <p>South Asia Textiles, Hayleys Fabric PLC</p>
+                <p>Aug 2024 – Feb 2025</p>
+                <ul style="margin-top: 1rem; padding-left: 1.2rem;">
+                    <li>Developed Power BI dashboards</li>
+                    <li>System development using SharePoint and Power Apps</li>
+                    <li>Process automation with Power Automate</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>Looking to collaborate on data science projects? Get in touch!</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/wiksith" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/tharinduWik" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:wiksith@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+94768973728"><i class="fas fa-phone"></i></a>
+            </div>
         </div>
-        
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com | <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></p>
-    </div>
+    </section>
 </body>
 </html>
