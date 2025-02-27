@@ -60,7 +60,7 @@
                   <a class="nav-link" href="service.html"> Services </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="blog.html"> Blog </a>
+                  <a class="nav-link" href="blog.html"> My Projects</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact </a>
@@ -222,50 +222,305 @@
   </section>
   <!-- end about section -->
 
-  <!-- blog section -->
-  <section class="blog_section layout_padding">
-    <div class="container">
+  
+<!-- blog section -->
+<!-- blog section -->
+<section class="blog_section layout_padding">
+  <div class="container">
       <div class="heading_container">
-        <h2>
-          My Projects
-        </h2>
-        <img src="images/plug.png" alt="">
+          <h2>My Projects</h2>
+          <img src="images/plug.png" alt="">
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Music Recommendation System
-              </h5>
-              <p>
-                Built using Python and Anaconda (Jupyter Notebook) to provide personalized music recommendations.
-              </p>
-            </div>
+      <div class="project-carousel owl-carousel">
+          <!-- Project 1 -->
+          <div class="box project-box" onclick="openModal('musicModal')">
+              <div class="img-box">
+                  <img src="images/Music.png" alt="Music Recommendation System">
+              </div>
+              <div class="detail-box">
+                  <h5>Music Recommendation System</h5>
+                  <p>Built using Python and Anaconda to provide personalized music recommendations.</p>
+              </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Tourism Management System
-              </h5>
-              <p>
-                Developed a full-stack application using the MERN stack for managing tourism-related data.
-              </p>
-            </div>
+          <!-- Project 2 -->
+          <div class="box project-box" onclick="openModal('tourismModal')">
+              <div class="img-box">
+                  <img src="images/blog2.jpg" alt="Tourism Management System">
+              </div>
+              <div class="detail-box">
+                  <h5>Tourism Management System</h5>
+                  <p>Full-stack application using MERN stack for tourism data management.</p>
+              </div>
           </div>
-        </div>
+          <!-- Project 3 -->
+          <div class="box project-box" onclick="openModal('fabricModal')">
+              <div class="img-box">
+                  <img src="images/BatchTracer.jpg" alt="Power BI Dashboard">
+              </div>
+              <div class="detail-box">
+                  <h5>Power BI Dashboard for Fabric Batch Tracking</h5>
+                  <p>Monitor fabric batch movements against production plans.</p>
+              </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="box project-box" onclick="openModal('knittingModal')">
+              <div class="img-box">
+                  <img src="images/Knitting.jpg" alt="Power App for Knitting">
+              </div>
+              <div class="detail-box">
+                  <h5>Power App for Knitting Machine Issue Tracking</h5>
+                  <p>Track and resolve knitting machine issues in real-time.</p>
+              </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="box project-box" onclick="openModal('qcModal')">
+              <div class="img-box">
+                  <img src="images/Qc.jpg" alt="Quality Checking System">
+              </div>
+              <div class="detail-box">
+                  <h5>Quality Checking Reporting System</h5>
+                  <p>Automated QC reporting system using Power Apps.</p>
+              </div>
+          </div>
+          <!-- Project 6 -->
+          <div class="box project-box" onclick="openModal('noteModal')">
+              <div class="img-box">
+                  <img src="images/Note.png" alt="Note Task Management">
+              </div>
+              <div class="detail-box">
+                  <h5>Note Task Management Application</h5>
+                  <p>Android app for task management using Kotlin.</p>
+              </div>
+          </div>
+          <!-- Project 7: Vehicle Loan Prediction System -->
+          <div class="box project-box" onclick="openModal('loanModal')">
+              <div class="img-box">
+                  <img src="images/Loan.png" alt="Vehicle Loan Prediction System">
+              </div>
+              <div class="detail-box">
+                  <h5>Vehicle Loan Prediction System</h5>
+                  <p>Predictive model for assessing vehicle loan applicant risk using machine learning.</p>
+              </div>
+          </div>
       </div>
-    </div>
-  </section>
-  <!-- end blog section -->
+  </div>
+
+  <!-- Modals -->
+  <!-- Music Recommendation System Modal -->
+  <div id="musicModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Music Recommendation System</h3>
+              <span class="close" onclick="closeModal('musicModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/Music.png" alt="Music Recommendation System">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>A sophisticated music recommendation engine that analyzes user preferences and listening patterns to suggest personalized music selections.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Python 3.x</li>
+                      <li>Anaconda Environment</li>
+                      <li>Jupyter Notebook</li>
+                      <li>Pandas & NumPy</li>
+                      <li>Scikit-learn</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Tourism Management System Modal -->
+  <div id="tourismModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Tourism Management System</h3>
+              <span class="close" onclick="closeModal('tourismModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/blog2.jpg" alt="Tourism Management System">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>A comprehensive full-stack application for managing tourism-related operations, including bookings, itineraries, and customer data.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>MongoDB</li>
+                      <li>Express.js</li>
+                      <li>React.js</li>
+                      <li>Node.js</li>
+                      <li>RESTful APIs</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Power BI Dashboard Modal -->
+  <div id="fabricModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Power BI Dashboard for Fabric Batch Tracking</h3>
+              <span class="close" onclick="closeModal('fabricModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/BatchTracer.jpg" alt="Power BI Dashboard">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>Developed a Power BI dashboard to monitor fabric batch movements against the production plan, improving visibility into delays and efficiency.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Power BI</li>
+                      <li>SQL</li>
+                      <li>Data Integration Tools</li>
+                  </ul>
+                  <h4>Key Features:</h4>
+                  <ul>
+                      <li>Multi-source data integration</li>
+                      <li>Drill-down analysis views</li>
+                      <li>Real-time batch tracking</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Knitting Machine Issue Tracking Modal -->
+  <div id="knittingModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Power App for Knitting Machine Issue Tracking</h3>
+              <span class="close" onclick="closeModal('knittingModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/Knitting.jpg" alt="Knitting Machine App">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>A Power App solution to log and track knitting machine issues, enabling real-time monitoring and faster resolution.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Power Apps</li>
+                      <li>Power Automate</li>
+                      <li>Power BI</li>
+                      <li>WhatsApp API</li>
+                  </ul>
+                  <h4>Key Features:</h4>
+                  <ul>
+                      <li>Issue logging with printed chits</li>
+                      <li>WhatsApp alerts to technicians</li>
+                      <li>Real-time TV display updates</li>
+                      <li>Automated email notifications</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Quality Checking Reporting System Modal -->
+  <div id="qcModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Quality Checking Reporting System</h3>
+              <span class="close" onclick="closeModal('qcModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/Qc.jpg" alt="QC Reporting System">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>A centralized QC reporting system that automates data consolidation from multiple Excel sheets for efficient decision-making.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Power Apps</li>
+                      <li>Power Automate</li>
+                      <li>Excel</li>
+                      <li>OneDrive</li>
+                  </ul>
+                  <h4>Key Features:</h4>
+                  <ul>
+                      <li>Automated data extraction</li>
+                      <li>Real-time data updates</li>
+                      <li>Reduced manual workload</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Note Task Management Application Modal -->
+  <div id="noteModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Note Task Management Application</h3>
+              <span class="close" onclick="closeModal('noteModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/Note.png" alt="Note Task App">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>An Android application for efficient task management and note-taking.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Android Studio</li>
+                      <li>Kotlin</li>
+                      <li>SQLite</li>
+                  </ul>
+                  <h4>Key Features:</h4>
+                  <ul>
+                      <li>Task creation and tracking</li>
+                      <li>Local database storage</li>
+                      <li>User-friendly interface</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Vehicle Loan Prediction System Modal -->
+  <div id="loanModal" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3>Vehicle Loan Prediction System</h3>
+              <span class="close" onclick="closeModal('loanModal')">×</span>
+          </div>
+          <div class="modal-body">
+              <div class="modal-image">
+                  <img src="images/Loan.png" alt="Vehicle Loan Prediction System">
+              </div>
+              <div class="modal-details">
+                  <h4>Project Overview</h4>
+                  <p>In the ever-evolving financial landscape, vehicle loan companies face increasing pressure to make informed, data-driven decisions about potential borrowers. The challenge lies in accurately assessing the risk associated with each loan applicant, ensuring that loans are granted to clients who are likely to repay, thereby reducing defaults and financial losses. This predictive system uses advanced machine learning techniques to help vehicle loan companies determine whether a client is suitable for receiving a vehicle loan. It leverages historical data related to clients' financial and personal attributes—such as income, credit history, employment status, and existing liabilities—to train a model that classifies applicants based on their repayment likelihood. This solution enhances efficiency, reduces bias, and meets the growing demand for sophisticated risk management tools in the vehicle loan market.</p>
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                      <li>Python</li>
+                      <li>Scikit-learn</li>
+                      <li>Pandas & NumPy</li>
+                      <li>Jupyter Notebook</li>
+                      <li>Machine Learning Algorithms</li>
+                  </ul>
+                  <h4>Key Features:</h4>
+                  <ul>
+                      <li>Risk assessment based on financial attributes</li>
+                      <li>Automated creditworthiness evaluation</li>
+                      <li>Scalable and unbiased decision-making</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- end blog section -->
 
   <!-- contact section -->
   <section class="contact_section layout_padding">
@@ -390,7 +645,69 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
-
+  <script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.style.overflow = "auto"; // Restore scrolling
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    }
+    </script>
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+   <script>
+   $(document).ready(function(){
+       $('.project-carousel').owlCarousel({
+           loop: true,
+           margin: 30,
+           nav: true,
+           dots: true,
+           autoplay: true,
+           autoplayTimeout: 3000,
+           autoplayHoverPause: true,
+           responsive: {
+               0: { items: 1 },
+               768: { items: 2 },
+               992: { items: 3 }
+           }
+       });
+   });
+   
+   function openModal(modalId) {
+       document.getElementById(modalId).style.display = "block";
+       document.body.style.overflow = "hidden";
+   }
+   
+   function closeModal(modalId) {
+       document.getElementById(modalId).style.display = "none";
+       document.body.style.overflow = "auto";
+   }
+   
+   window.onclick = function(event) {
+       const modals = document.getElementsByClassName('modal');
+       for (let i = 0; i < modals.length; i++) {
+           if (event.target == modals[i]) {
+               modals[i].style.display = "none";
+               document.body.style.overflow = "auto";
+           }
+       }
+   }
+   </script>
 </body>
 
 </html>
