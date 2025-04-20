@@ -10,6 +10,223 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts: Space Mono and Orbitron for futuristic look -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Experience Timeline Styles - Fixed visibility issues */
+        .experience-timeline {
+            margin: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .experience-timeline h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .experience-timeline h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, #4b208c, #8a56d6);
+            transition: width 0.3s ease;
+        }
+        
+        .experience-timeline:hover h3::after {
+            width: 100%;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, #4b208c 0%, #8a56d6 50%, rgba(138, 86, 214, 0.3) 100%);
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeInTimeline 0.5s ease forwards;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        
+        .timeline-item:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInTimeline {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(75, 32, 140, 0.2);
+            border: 2px solid #8a56d6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a56d6;
+            font-size: 18px;
+            z-index: 2;
+            box-shadow: 0 0 15px rgba(138, 86, 214, 0.4);
+            animation: pulseIcon 2s infinite;
+        }
+        
+        @keyframes pulseIcon {
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 86, 214, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(138, 86, 214, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(138, 86, 214, 0);
+            }
+        }
+        
+        .education .timeline-icon {
+            background: rgba(75, 32, 140, 0.2);
+            border-color: #8a56d6;
+            color: #8a56d6;
+        }
+        
+        .work .timeline-icon {
+            background: rgba(32, 75, 140, 0.2);
+            border-color: #5686d6;
+            color: #5686d6;
+        }
+        
+        .timeline-content {
+            background: rgba(26, 27, 50, 0.6);
+            border-left: 3px solid #8a56d6;
+            border-radius: 0 15px 15px 0;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .work .timeline-content {
+            border-left-color: #5686d6;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(138, 86, 214, 0.2);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -7px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #8a56d6;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(138, 86, 214, 0.8);
+        }
+        
+        .work .timeline-marker {
+            background: #5686d6;
+            box-shadow: 0 0 10px rgba(86, 134, 214, 0.8);
+        }
+        
+        .timeline-content h4 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-location, 
+        .timeline-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #bbb;
+        }
+        
+        .timeline-content p {
+            color: #ddd;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Add a subtle animation to make the heading more noticeable */
+        @keyframes highlightText {
+            0% { text-shadow: 0 0 5px rgba(138, 86, 214, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(138, 86, 214, 0.7); }
+            100% { text-shadow: 0 0 5px rgba(138, 86, 214, 0.3); }
+        }
+        
+        .highlight-text {
+            animation: highlightText 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 576px) {
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-icon {
+                left: -30px;
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Particle background -->
@@ -77,22 +294,54 @@
                 <div class="about-text">
                     <p>Third-year Data Science undergrad at SLIIT with expertise in data analysis, visualization, and automation. Built Power BI dashboards, automated workflows with Power Apps and Power Automate, and used SQL for data manipulation during a Data Analyst internship at South Asia Textiles.</p>
                     <p>With a background in machine learning and web development, I combine analytical thinking with creative problem-solving to build applications that not only meet but exceed client expectations.</p>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <h3 class="counter" data-target="0.6">0</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="counter" data-target="10">0</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="counter" data-target="4">0</h3>
-                            <p>Happy Clients</p>
+                    
+                    <!-- New Experience Timeline Section -->
+                    <div class="experience-timeline">
+                        <h3>My <span class="highlight-text">Journey</span></h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item education">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-marker"></div>
+                                    <h4>BSc in Data Science</h4>
+                                    <div class="timeline-info">
+                                        <span class="timeline-location">
+                                            <i class="fas fa-university"></i> SLIIT, Malabe
+                                        </span>
+                                        <span class="timeline-date">
+                                            <i class="fas fa-calendar-alt"></i> 2022 - Present
+                                        </span>
+                                    </div>
+                                    <p>Pursuing a degree in Data Science with focus on machine learning, data visualization, and analytics.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item work">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-marker"></div>
+                                    <h4>Data Analyst Intern</h4>
+                                    <div class="timeline-info">
+                                        <span class="timeline-location">
+                                            <i class="fas fa-building"></i> South Asia Textiles
+                                        </span>
+                                        <span class="timeline-date">
+                                            <i class="fas fa-calendar-alt"></i> 2024
+                                        </span>
+                                    </div>
+                                    <p>Developed Power BI dashboards and automated workflows using Power Apps and Power Automate to streamline business processes.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="about-actions">
-                        <a href="#" class="btn btn-primary">Download Resume</a>
+                        <a href="https://drive.google.com/file/d/186sqZ7vinBDCKAFd-cSwjN0uXlbC0zAm/view?usp=drive_link" class="btn btn-primary">Download Resume</a>
                         <div class="social-buttons">
                             <a href="https://linkedin.com/in/wiksith" target="_blank" class="social-btn linkedin-btn">
                                 <div class="social-icon">
@@ -842,6 +1091,48 @@
                     }, 3000);
                 });
             }
+
+            // Timeline animation on scroll
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = entry.target.dataset.animation;
+                        timelineObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.dataset.animation = `fadeInTimeline 0.5s ease forwards ${0.3 + (index * 0.3)}s`;
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-30px)';
+                timelineObserver.observe(item);
+            });
+
+            // Force timeline visibility after page load
+            setTimeout(() => {
+                const timelineTitle = document.querySelector('.experience-timeline h3');
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                
+                if (timelineTitle) {
+                    timelineTitle.style.opacity = '1';
+                    timelineTitle.style.visibility = 'visible';
+                }
+                
+                timelineItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                        item.style.visibility = 'visible';
+                    }, 300 + (index * 300));
+                });
+            }, 500);
         });
     </script>
 </body>
