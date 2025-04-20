@@ -8,78 +8,451 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="Software Engineer, Data Science, Power BI, Python, SQL, Machine Learning" />
-  <meta name="description" content="Explore a collection of innovative projects by Wikasith Dilshan, including data-driven solutions and full-stack applications." />
-  <meta name="author" content="Wikasith Dilshan" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-  <title>Wikasith Dilshan</title>
+  <title>My Projects | Wikasith Dilshan</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
   <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Modal styles -->
+  <link href="css/modal.css" rel="stylesheet" />
+  <style>
+    /* Futuristic theme styles */
+    body {
+      background-color: #0a0a1a;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      perspective: 1000px;
+    }
+    
+    .heading_container h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      text-shadow: 0 0 10px rgba(138, 86, 214, 0.5);
+    }
+    
+    .heading_container h2::before {
+      background-image: linear-gradient(90deg, #4b208c, #8a56d6);
+      box-shadow: 0 0 10px rgba(138, 86, 214, 0.7);
+    }
+    
+    .heading_container img {
+      filter: hue-rotate(180deg);
+    }
+    
+    .blog_section {
+      background: linear-gradient(135deg, #0a0a1a 0%, #151525 100%);
+      padding-top: 80px;
+    }
+    
+    /* Enhanced 3D effects for project cards */
+    .box {
+      background: linear-gradient(135deg, #13132b 0%, #1c1c35 100%);
+      border: 1px solid #2a2a4a;
+      box-shadow: 0 5px 25px rgba(75, 32, 140, 0.2);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .box:hover {
+      transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+      box-shadow: 
+        0 15px 35px rgba(75, 32, 140, 0.4),
+        0 0 15px rgba(138, 86, 214, 0.3);
+      border-color: #8a56d6;
+    }
+    
+    .box:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(138, 86, 214, 0.1) 0%, rgba(75, 32, 140, 0) 50%);
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      border-radius: 10px;
+    }
+    
+    .box:hover:after {
+      opacity: 1;
+    }
+    
+    /* Enhanced 3D depth for project images */
+    .box .img-box {
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .box .img-box img {
+      width: 100%;
+      transition: all 0.5s ease;
+      transform-origin: center;
+    }
+    
+    .box:hover .img-box img {
+      transform: scale(1.1) translateZ(10px);
+      filter: brightness(1.1) contrast(1.1);
+    }
+    
+    /* Enhanced text effects */
+    .detail-box {
+      padding: 25px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .detail-box h5 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      color: #8a56d6;
+      margin-bottom: 15px;
+      position: relative;
+      text-shadow: 0 0 8px rgba(138, 86, 214, 0.3);
+    }
+    
+    .detail-box h5:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #8a56d6, transparent);
+      transition: width 0.3s ease;
+    }
+    
+    .box:hover .detail-box h5:after {
+      width: 100%;
+    }
+    
+    .detail-box p {
+      color: #bbb;
+    }
+    
+    .project-box {
+      position: relative;
+    }
+    
+    .project-box::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4b208c, #8a56d6);
+      transition: width 0.3s ease;
+    }
+    
+    .project-box:hover::before {
+      width: 100%;
+    }
+    
+    /* Style updates for the modals */
+    .modal-content {
+      background: linear-gradient(135deg, #13132b 0%, #1c1c35 100%);
+      border: 1px solid #2a2a4a;
+      color: #f5f5f5;
+    }
+    
+    .modal-header {
+      border-color: #2a2a4a;
+    }
+    
+    .modal-header h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #8a56d6;
+    }
+    
+    .modal-details h4 {
+      color: #8a56d6;
+    }
+    
+    .modal-details p {
+      color: #bbb;
+    }
+    
+    .tech-list li, .feature-list li {
+      color: #ddd;
+      border-color: #2a2a4a;
+    }
+    
+    .tech-list li {
+      background-color: #252540;
+      border-left: 3px solid #8a56d6;
+    }
+    
+    .tech-list li:hover {
+      background-color: #333355;
+    }
+    
+    .modal-btn-primary {
+      background-color: #4b208c;
+    }
+    
+    .modal-btn-primary:hover {
+      background-color: #8a56d6;
+    }
+    
+    .modal-btn-secondary {
+      background-color: #2a2a4a;
+      color: #ddd;
+    }
+    
+    .modal-btn-secondary:hover {
+      background-color: #3a3a5a;
+    }
+    
+    /* Glowing and particle effects */
+    .glow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(75, 32, 140, 0.15);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .glow-1 {
+      top: 10%;
+      left: 10%;
+    }
+    
+    .glow-2 {
+      top: 50%;
+      right: 10%;
+      background: rgba(138, 86, 214, 0.15);
+    }
+    
+    .glow-3 {
+      bottom: 10%;
+      left: 30%;
+    }
+
+    /* Navbar updates */
+    .navbar {
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .glitch-text {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #8a56d6;
+      position: relative;
+      text-shadow: 0 0 5px rgba(138, 86, 214, 0.5);
+    }
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links li {
+      margin: 0 15px;
+    }
+    
+    .nav-link {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4b208c, #8a56d6);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+    }
+    
+    .nav-link.active {
+      color: #8a56d6;
+    }
+    
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        background: rgba(10, 10, 26, 0.95);
+        backdrop-filter: blur(10px);
+        padding-top: 40px;
+        transition: all 0.4s ease;
+        z-index: 100;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+      }
+    }
+
+    /* LinkedIn button styles for this page */
+    .linkedin-button {
+      position: fixed;
+      right: 30px;
+      bottom: 90px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(30, 30, 60, 0.7);
+      border: 1px solid rgba(138, 86, 214, 0.5);
+      border-radius: 30px;
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 
+        0 0 10px rgba(138, 86, 214, 0.3),
+        0 0 20px rgba(138, 86, 214, 0.2);
+      transform-style: preserve-3d;
+    }
+    
+    .linkedin-button:hover {
+      transform: translateY(-5px) translateZ(10px);
+      box-shadow: 
+        0 0 15px rgba(138, 86, 214, 0.5),
+        0 0 30px rgba(138, 86, 214, 0.3);
+    }
+    
+    .linkedin-button i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: #0077B5;
+      text-shadow: 0 0 5px rgba(0, 119, 181, 0.7);
+    }
+    
+    .linkedin-pulse {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      animation: pulse 2s infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 181, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(0, 119, 181, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 119, 181, 0);
+      }
+    }
+  </style>
 </head>
 
 <body class="sub_page">
+  <!-- Glowing effects -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
 
-  <div class="hero_area">
-    <!-- header section starts -->
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="">
-            <span>
-              Wikasith Dilshan
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="s-1"> </span>
-            <span class="s-2"> </span>
-            <span class="s-3"> </span>
-          </button>
+  <!-- Navbar from index.html -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="glitch-text">WIKASITH</span>
+    </div>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="service.html" class="nav-link">Services</a></li>
+      <li><a href="blog.html" class="nav-link active">Projects</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Service </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="blog.html"> My Projects </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
+  <!-- LinkedIn Button -->
+  <a href="https://linkedin.com/in/wiksith" target="_blank" class="linkedin-button">
+    <i class="fab fa-linkedin"></i>
+    <span>Check My LinkedIn</span>
+    <div class="linkedin-pulse"></div>
+  </a>
 
   <!-- projects section -->
   <section class="blog_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
-          My Projects
+          My <span style="color: #8a56d6;">Projects</span>
         </h2>
         <img src="images/plug.png" alt="">
       </div>
@@ -157,7 +530,7 @@
           </div>
         </div>
         <!-- Project 7: Vehicle Loan Prediction System -->
-        <div class="col-md-6">
+        <div class="col-md-6 mx-auto">
           <div class="box project-box" onclick="openModal('loanModal')">
             <div class="img-box">
               <img src="images/Loan.png" alt="Vehicle Loan Prediction System">
@@ -173,11 +546,11 @@
 
     <!-- Modals -->
     <!-- Music Recommendation System Modal -->
-    <div id="musicModal" class="modal">
+    <div id="musicModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Music Recommendation System</h3>
-          <span class="close" onclick="closeModal('musicModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -187,24 +560,34 @@
             <h4>Project Overview</h4>
             <p>A sophisticated music recommendation engine that analyzes user preferences and listening patterns to suggest personalized music selections.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Python 3.x</li>
               <li>Anaconda Environment</li>
               <li>Jupyter Notebook</li>
               <li>Pandas & NumPy</li>
               <li>Scikit-learn</li>
             </ul>
+            <h4>Key Features:</h4>
+            <ul class="feature-list">
+              <li>Content-based filtering algorithm</li>
+              <li>User preference analysis</li>
+              <li>Dynamic recommendation adjustments</li>
+            </ul>
           </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Code</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
         </div>
       </div>
     </div>
 
     <!-- Tourism Management System Modal -->
-    <div id="tourismModal" class="modal">
+    <div id="tourismModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Tourism Management System</h3>
-          <span class="close" onclick="closeModal('tourismModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -214,24 +597,35 @@
             <h4>Project Overview</h4>
             <p>A comprehensive full-stack application for managing tourism-related operations, including bookings, itineraries, and customer data.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>MongoDB</li>
               <li>Express.js</li>
               <li>React.js</li>
               <li>Node.js</li>
               <li>RESTful APIs</li>
             </ul>
+            <h4>Key Features:</h4>
+            <ul class="feature-list">
+              <li>User authentication system</li>
+              <li>Admin dashboard with analytics</li>
+              <li>Booking management system</li>
+              <li>Interactive itinerary builder</li>
+            </ul>
           </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Code</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
         </div>
       </div>
     </div>
 
     <!-- Power BI Dashboard Modal -->
-    <div id="fabricModal" class="modal">
+    <div id="fabricModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Power BI Dashboard for Fabric Batch Tracking</h3>
-          <span class="close" onclick="closeModal('fabricModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -241,28 +635,32 @@
             <h4>Project Overview</h4>
             <p>Developed a Power BI dashboard to monitor fabric batch movements against the production plan, improving visibility into delays and efficiency.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Power BI</li>
               <li>SQL</li>
               <li>Data Integration Tools</li>
             </ul>
             <h4>Key Features:</h4>
-            <ul>
+            <ul class="feature-list">
               <li>Multi-source data integration</li>
               <li>Drill-down analysis views</li>
               <li>Real-time batch tracking</li>
             </ul>
           </div>
         </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Project</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
+        </div>
       </div>
     </div>
 
     <!-- Knitting Machine Issue Tracking Modal -->
-    <div id="knittingModal" class="modal">
+    <div id="knittingModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Power App for Knitting Machine Issue Tracking</h3>
-          <span class="close" onclick="closeModal('knittingModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -272,14 +670,14 @@
             <h4>Project Overview</h4>
             <p>A Power App solution to log and track knitting machine issues, enabling real-time monitoring and faster resolution.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Power Apps</li>
               <li>Power Automate</li>
               <li>Power BI</li>
               <li>WhatsApp API</li>
             </ul>
             <h4>Key Features:</h4>
-            <ul>
+            <ul class="feature-list">
               <li>Issue logging with printed chits</li>
               <li>WhatsApp alerts to technicians</li>
               <li>Real-time TV display updates</li>
@@ -287,15 +685,19 @@
             </ul>
           </div>
         </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Project</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
+        </div>
       </div>
     </div>
 
     <!-- Quality Checking Reporting System Modal -->
-    <div id="qcModal" class="modal">
+    <div id="qcModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Quality Checking Reporting System</h3>
-          <span class="close" onclick="closeModal('qcModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -305,29 +707,33 @@
             <h4>Project Overview</h4>
             <p>A centralized QC reporting system that automates data consolidation from multiple Excel sheets for efficient decision-making.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Power Apps</li>
               <li>Power Automate</li>
               <li>Excel</li>
               <li>OneDrive</li>
             </ul>
             <h4>Key Features:</h4>
-            <ul>
+            <ul class="feature-list">
               <li>Automated data extraction</li>
               <li>Real-time data updates</li>
               <li>Reduced manual workload</li>
             </ul>
           </div>
         </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Project</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
+        </div>
       </div>
     </div>
 
     <!-- Note Task Management Application Modal -->
-    <div id="noteModal" class="modal">
+    <div id="noteModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Note Task Management Application</h3>
-          <span class="close" onclick="closeModal('noteModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -337,28 +743,32 @@
             <h4>Project Overview</h4>
             <p>An Android application for efficient task management and note-taking.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Android Studio</li>
               <li>Kotlin</li>
               <li>SQLite</li>
             </ul>
             <h4>Key Features:</h4>
-            <ul>
+            <ul class="feature-list">
               <li>Task creation and tracking</li>
               <li>Local database storage</li>
               <li>User-friendly interface</li>
             </ul>
           </div>
         </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Code</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
+        </div>
       </div>
     </div>
 
     <!-- Vehicle Loan Prediction System Modal -->
-    <div id="loanModal" class="modal">
+    <div id="loanModal" class="project-modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3>Vehicle Loan Prediction System</h3>
-          <span class="close" onclick="closeModal('loanModal')">×</span>
+          <button class="modal-close">&times;</button>
         </div>
         <div class="modal-body">
           <div class="modal-image">
@@ -366,9 +776,9 @@
           </div>
           <div class="modal-details">
             <h4>Project Overview</h4>
-            <p>In the ever-evolving financial landscape, vehicle loan companies face increasing pressure to make informed, data-driven decisions about potential borrowers. This predictive system uses advanced machine learning techniques to help vehicle loan companies determine whether a client is suitable for receiving a vehicle loan, reducing defaults and financial losses. It leverages historical data related to clients' financial and personal attributes—such as income, credit history, employment status, and existing liabilities—to train a model that classifies applicants based on their repayment likelihood. This solution enhances efficiency, reduces bias, and meets the growing demand for sophisticated risk management tools in the vehicle loan market.</p>
+            <p>In the ever-evolving financial landscape, vehicle loan companies face increasing pressure to make informed, data-driven decisions about potential borrowers. This predictive system uses advanced machine learning techniques to help vehicle loan companies determine whether a client is suitable for receiving a vehicle loan, reducing defaults and financial losses.</p>
             <h4>Technologies Used:</h4>
-            <ul>
+            <ul class="tech-list">
               <li>Python</li>
               <li>Scikit-learn</li>
               <li>Pandas & NumPy</li>
@@ -376,12 +786,16 @@
               <li>Machine Learning Algorithms</li>
             </ul>
             <h4>Key Features:</h4>
-            <ul>
+            <ul class="feature-list">
               <li>Risk assessment based on financial attributes</li>
               <li>Automated creditworthiness evaluation</li>
               <li>Scalable and unbiased decision-making</li>
             </ul>
           </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/tharinduWik" target="_blank" class="modal-btn modal-btn-primary">View Code</a>
+          <button class="modal-btn modal-btn-secondary modal-close">Close</button>
         </div>
       </div>
     </div>
@@ -394,26 +808,26 @@
       <div class="info_contact">
         <div class="row">
           <div class="col-md-4">
-            <a href="">
+            <a href="https://www.google.com/maps/place/SLIIT" target="_blank">
               <img src="images/location-white.png" alt="">
               <span>
-                Passages of Lorem Ipsum available
+                SLIIT, Malabe, Sri Lanka
               </span>
             </a>
           </div>
           <div class="col-md-4">
-            <a href="">
+            <a href="tel:+94768973728">
               <img src="images/telephone-white.png" alt="">
               <span>
-                Call : +012334567890
+                Call: +94 76 897 3728
               </span>
             </a>
           </div>
           <div class="col-md-4">
-            <a href="">
+            <a href="mailto:wiksith@gmail.com">
               <img src="images/envelope-white.png" alt="">
               <span>
-                demo@gmail.com
+                wiksith@gmail.com
               </span>
             </a>
           </div>
@@ -433,23 +847,13 @@
         <div class="col-md-4 col-lg-3">
           <div class="info_social">
             <div>
-              <a href="">
-                <img src="images/fb.png" alt="">
+              <a href="https://linkedin.com/in/wiksith" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
               </a>
             </div>
             <div>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/instagram.png" alt="">
+              <a href="https://github.com/tharinduWik" target="_blank">
+                <img src="images/github.png" alt="GitHub">
               </a>
             </div>
           </div>
@@ -465,8 +869,7 @@
       <div class="row">
         <div class="col-lg-7 col-md-9 mx-auto">
           <p>
-            © 2019 All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
+            © 2025 All Rights Reserved By Wikasith Dilshan
           </p>
         </div>
       </div>
@@ -487,8 +890,9 @@
       document.body.style.overflow = "auto";
     }
 
+    // Close modal when clicking outside of it
     window.onclick = function(event) {
-      const modals = document.getElementsByClassName('modal');
+      const modals = document.getElementsByClassName('project-modal');
       for (let i = 0; i < modals.length; i++) {
         if (event.target == modals[i]) {
           modals[i].style.display = "none";
@@ -496,6 +900,46 @@
         }
       }
     }
+
+    // Close modal when clicking close button
+    document.addEventListener('DOMContentLoaded', function() {
+      const closeButtons = document.querySelectorAll('.modal-close');
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const modal = this.closest('.project-modal');
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+      });
+      
+      // Add glowing effect that follows mouse
+      const body = document.querySelector('body');
+      const glowEffect = document.createElement('div');
+      glowEffect.classList.add('glow');
+      glowEffect.style.position = 'fixed';
+      glowEffect.style.width = '300px';
+      glowEffect.style.height = '300px';
+      glowEffect.style.borderRadius = '50%';
+      glowEffect.style.background = 'radial-gradient(circle, rgba(138,86,214,0.15) 0%, rgba(138,86,214,0) 70%)';
+      glowEffect.style.transform = 'translate(-50%, -50%)';
+      glowEffect.style.pointerEvents = 'none';
+      glowEffect.style.zIndex = '-1';
+      body.appendChild(glowEffect);
+      
+      document.addEventListener('mousemove', function(e) {
+        glowEffect.style.left = e.clientX + 'px';
+        glowEffect.style.top = e.clientY + 'px';
+      });
+      
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 

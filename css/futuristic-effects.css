@@ -1,0 +1,490 @@
+/* Futuristic 3D UI/UX Designer Portfolio Effects */
+
+/* Base 3D perspective setup */
+body {
+  perspective: 1000px;
+  overflow-x: hidden;
+  background: #0a0a1a;
+}
+
+/* Enhanced particle system */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+/* Create futuristic grid lines on the background */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(138, 86, 214, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 86, 214, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -5;
+}
+
+/* Enhanced 3D hero section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Floating elements in hero */
+.floating-element {
+  position: absolute;
+  background: rgba(138, 86, 214, 0.1);
+  border-radius: 50%;
+  filter: blur(15px);
+  pointer-events: none;
+  animation: float 15s infinite ease-in-out;
+}
+
+.float-1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  right: -50px;
+  animation-delay: 0s;
+}
+
+.float-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  left: -50px;
+  animation-delay: -5s;
+  background: rgba(75, 32, 140, 0.1);
+}
+
+.float-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 20%;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(15px) rotate(-5deg);
+  }
+}
+
+/* 3D text effects */
+.glitch-text {
+  position: relative;
+  animation: textFloat 4s infinite ease alternate;
+  text-shadow: 
+    0 0 5px rgba(138, 86, 214, 0.7),
+    0 0 10px rgba(138, 86, 214, 0.5),
+    0 0 15px rgba(138, 86, 214, 0.3);
+}
+
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced 3D cube */
+.cube-wrapper {
+  perspective: 800px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cubeSpin 20s infinite linear;
+}
+
+.cube .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 60, 0.8);
+  border: 2px solid rgba(138, 86, 214, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 50px rgba(138, 86, 214, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.cube .front {
+  transform: translateZ(150px);
+}
+
+.cube .back {
+  transform: rotateY(180deg) translateZ(150px);
+}
+
+.cube .right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.cube .left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.cube .top {
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.cube .bottom {
+  transform: rotateX(-90deg) translateZ(150px);
+}
+
+@keyframes cubeSpin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Hologram profile image effect */
+.hologram-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: hologramFloat 4s infinite ease-in-out alternate;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 20px rgba(138, 86, 214, 0.5),
+    0 0 40px rgba(75, 32, 140, 0.3);
+}
+
+.hologram-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(138, 86, 214, 0.2) 50%, transparent 100%);
+  animation: hologramScan 3s infinite linear;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+@keyframes hologramFloat {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(5deg);
+  }
+}
+
+@keyframes hologramScan {
+  0% {
+    background-position: -300px 0;
+  }
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+/* Enhanced skill bars with 3D effects */
+.skill-bar {
+  height: 10px;
+  background: rgba(30, 30, 60, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4b208c, #8a56d6);
+  border-radius: 5px;
+  position: relative;
+  animation: skillFill 1.5s ease-out forwards;
+  transform-origin: left;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: skillShimmer 2s infinite;
+}
+
+@keyframes skillFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes skillShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 3D Project cards */
+.project-card {
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+}
+
+.project-image {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(138, 86, 214, 0.3);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(138, 86, 214, 0.3), transparent 70%),
+    radial-gradient(circle at 70% 70%, rgba(75, 32, 140, 0.3), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-image::before {
+  opacity: 1;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Animated background for sections */
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(75, 32, 140, 0.05) 0%, transparent 100%);
+  z-index: -1;
+  transform: skewY(-5deg);
+  transform-origin: top left;
+}
+
+/* Enhanced contact form with neon effect */
+.contact-form input,
+.contact-form textarea {
+  background: rgba(30, 30, 60, 0.5);
+  border: 1px solid rgba(138, 86, 214, 0.3);
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(138, 86, 214, 0.5), 0 0 15px rgba(138, 86, 214, 0.5);
+  outline: none;
+  border-color: #8a56d6;
+}
+
+/* Animated glow for buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: rotate(45deg);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(0, 0);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4b208c 0%, #8a56d6 100%);
+  border: none;
+  box-shadow: 0 5px 15px rgba(75, 32, 140, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 5px 25px rgba(138, 86, 214, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Back to top button with neon effect */
+#back-to-top {
+  border: 1px solid rgba(138, 86, 214, 0.5);
+  background: rgba(30, 30, 60, 0.7);
+  color: #8a56d6;
+  box-shadow: 
+    0 0 10px rgba(138, 86, 214, 0.3),
+    0 0 20px rgba(138, 86, 214, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+#back-to-top:hover {
+  background: rgba(45, 45, 75, 0.9);
+  box-shadow: 
+    0 0 15px rgba(138, 86, 214, 0.5),
+    0 0 30px rgba(138, 86, 214, 0.3);
+}
+
+/* LinkedIn button with futuristic design */
+.linkedin-button {
+  position: fixed;
+  right: 30px;
+  bottom: 90px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(30, 30, 60, 0.7);
+  border: 1px solid rgba(138, 86, 214, 0.5);
+  border-radius: 30px;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    0 0 10px rgba(138, 86, 214, 0.3),
+    0 0 20px rgba(138, 86, 214, 0.2);
+  transform-style: preserve-3d;
+}
+
+.linkedin-button:hover {
+  transform: translateY(-5px) translateZ(10px);
+  box-shadow: 
+    0 0 15px rgba(138, 86, 214, 0.5),
+    0 0 30px rgba(138, 86, 214, 0.3);
+}
+
+.linkedin-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(138, 86, 214, 0.2) 0%, transparent 100%);
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.linkedin-button:hover::before {
+  opacity: 1;
+}
+
+.linkedin-button i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #0077B5;
+  text-shadow: 0 0 5px rgba(0, 119, 181, 0.7);
+}
+
+.linkedin-button::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: rgba(138, 86, 214, 0.5);
+  bottom: -10px;
+  left: calc(50% - 15px);
+  filter: blur(5px);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.linkedin-button:hover::after {
+  opacity: 0.7;
+  transform: scale(1.5);
+}
+
+.linkedin-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 119, 181, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 119, 181, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 119, 181, 0);
+  }
+}
